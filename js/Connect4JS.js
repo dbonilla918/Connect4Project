@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log("The code works, you can go ahead and play if there are no errors!");
 
 
+
+
 // This portion of code makes it so that whatver box you click on, it will cycle between an X, O or blank symbol
 let clickBox = (e) => {
 	console.log("Changed whatever box you clicked on");
@@ -20,6 +22,18 @@ let clickBox = (e) => {
         }
 }
 // This closes out the fucntion above
+
+
+
+// let playerTurn = (e) =>{
+// 		if its player 1's turn
+// 			let space = x
+//			let b7 = x
+// 		else if its player 2's turn
+// 				let space = o
+// 				let b7 = o
+// }
+
 
 
 
