@@ -1,152 +1,75 @@
 button {
   outline: none;
-  border: 4px solid blue;
+  border: 4px solid #5C4033;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
 }
 
-.flex-container1 {
-  display: flex;
-	flex-direction: row;
+.container {
+    padding: 40px;a
+    height: 100vh;
+    display: flex;
+    justify-content: center;a
+    align-items: center;
+    flex-direction: column;
 }
 
-.flex-container2 {
-  display: flex;
-	flex-direction: row;
+#gameBoard {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
-#box1 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-  border: 1px solid black;
+.box {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+    border: 2px solid;
 }
 
-#box1:hover {
-	background-color: red;
-  color: white;
+.box:hover {
+    background-color: red;
+    color: white;
+    border: 2px solid;
 }
 
-#box2 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
+#winningBlock {
+    background-color: red;
+    color: white;
 }
 
-#box2:hover {
-	background-color: red;
-  color: white;
+.fade-in-textX {
+    font-family: times;
+    color: blue;
+    font-size: 115px;
+    animation: fadeIn 3s;
+
 }
 
-#box3 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-#box3:hover {
-	background-color: red;
-  color: white;
+.fade-in-textO {
+    font-family: times;
+    color: red;
+    font-size: 115px;
+    animation: fadeIn 3s;
+
 }
 
-#box4 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-#box4:hover {
-	background-color: red;
-  color: white;
-}
-
-#box5 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
-}
-
-#box5:hover {
-	background-color: red;
-  color: white;
-}
-
-#box6 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
-}
-
-#box6:hover {
-	background-color: red;
-  color: white;
-}
-
-#box7 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
-}
-
-#box7:hover {
-	background-color: red;
-  color: white;
-}
-
-#box8 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
-}
-
-#box8:hover {
-	background-color: red;
-  color: white;
-}
-
-#box9 {
-	height: 100px;
-	width: 100px;
-	background-color: white;
-	margin: 10px;
-	text-align: center;
-	font-size: 500%;
-	border: 1px solid black;
-}
-
-#box9:hover {
-	background-color: red;
-  color: white;
+#youwin {
+	color: #5C4033;
+	font-size: 100px;
 }

@@ -1,82 +1,127 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-// let grid = { t1:" ", t2: " ", t3: " ", m1: " ", m2: " ", m3: " ", b1: " ", b2: " ", b3: " "}
-//
-// grid.m2 = "X";
-
 console.log("The code works, you can go ahead and play if there are no errors!");
 
-
-
-
-// This portion of code makes it so that whatver box you click on, it will cycle between an X, O or blank symbol
-let clickBox = (e) => {
-	console.log("Changed whatever box you clicked on");
-    // e.currentTarget.textContent = 'X';
-        if (e.currentTarget.textContent === 'X'){
-            e.currentTarget.textContent = 'O'
-        } else if (e.currentTarget.textContent === 'O') {
-            e.currentTarget.textContent = ' ';
-        }else {
-            e.currentTarget.textContent = 'X';
-        }
+let checkWinX = () => {
+	if (spaces['box0'] == 'X' && spaces['box1'] == 'X' && spaces['box2'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!");
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box3'] == 'X' && spaces['box4'] == 'X' && spaces['box5'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box6'] == 'X' && spaces['box7'] == 'X' && spaces['box8'] == 'X') {
+		alert.set("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box0'] == 'X' && spaces['box3'] == 'X' && spaces['box6'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box1'] == 'X' && spaces['box4'] == 'X' && spaces['box7'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box2'] == 'X' && spaces['box5'] == 'X' && spaces['box8'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box0'] == 'X' && spaces['box4'] == 'X' && spaces['box8'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	} else if (spaces['box2'] == 'X' && spaces['box4'] == 'X' && spaces['box6'] == 'X') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textX');
+	}
 }
-// This closes out the fucntion above
+
+let checkWinO = () => {
+	if (spaces['box0'] == 'O' && spaces['box1'] == 'O' && spaces['box2'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	} else if (spaces['box3'] == 'O' && spaces['box4'] == 'O' && spaces['box5'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	} else if (spaces['box6'] == 'O' && spaces['box7'] == 'O' && spaces['box8'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	} else if (spaces['box1'] == 'O' && spaces['box4'] == 'O' && spaces['box7'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	} else if (spaces['box2'] == 'O' && spaces['box5'] == 'O' && spaces['box8'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	} else if (spaces['box0'] == 'O' && spaces['box4'] == 'O' && spaces['box8'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	} else if (spaces['box2'] == 'O' && spaces['box4'] == 'O' && spaces['box6'] == 'O') {
+		alert("Player " + currentPlayer + " has won the game!")
+		gameBoard.classList.add('fade-in-textO');
+	}
+}
+
+//Need this array in order for the loop in startGame to work and allow the players to CLICK on the box
+let boxes = Array.from(document.getElementsByClassName('box'))
+console.log(boxes);
 
 
-
-// let playerTurn = (e) =>{
-// 		if its player 1's turn
-// 			let space = x
-//			let b7 = x
-// 		else if its player 2's turn
-// 				let space = o
-// 				let b7 = o
-// }
+//Constants are way more important than I wouldve ever imagined
+//Creates an array with 9 empty spaces which then allows the players to PLACE either an X or a O in there
+const O_TEXT = "O"
+const X_TEXT = "X"
+let currentPlayer = X_TEXT
+let spaces = {}
+console.log(spaces);
 
 
+const startGame = () => {
+	//This event handler allows the boxes that are empty to be clicked on and have an X or an O placed in there
+	boxes.forEach(box => box.addEventListener('click', boxClicked))
+}
 
 
-// These repeating strings of code target the box that's clicked to make the symbol change
-let changeBox = document.querySelector("#box1")
-changeBox.addEventListener('click', clickBox)
+//This code is what makes the turn based system work
+function boxClicked(e) {
+	const id = e.target.id
 
-let changeBox2 = document.querySelector("#box2")
-changeBox2.addEventListener('click', clickBox)
+	if(!spaces[id]){
+        spaces[id] = currentPlayer
+        e.target.innerText = currentPlayer
 
-let changeBox3 = document.querySelector("#box3")
-changeBox3.addEventListener('click', clickBox)
+		checkWinX()
+		checkWinO()
 
-let changeBox4 = document.querySelector("#box4")
-changeBox4.addEventListener('click', clickBox)
+		//Find a way to log the player placing an X or an O in the console
+		currentPlayer = currentPlayer == X_TEXT ? O_TEXT : X_TEXT
+		console.log("you clicked on a box");
 
-let changeBox5 = document.querySelector("#box5")
-changeBox5.addEventListener('click', clickBox)
+		// console.log(spaces);
 
-let changeBox6 = document.querySelector("#box6")
-changeBox6.addEventListener('click', clickBox)
+		//checkWin()
+	}
+	console.log(spaces);
+}
 
-let changeBox7 = document.querySelector("#box7")
-changeBox7.addEventListener('click', clickBox)
-
-let changeBox8 = document.querySelector("#box8")
-changeBox8.addEventListener('click', clickBox)
-
-let changeBox9 = document.querySelector("#box9")
-changeBox9.addEventListener('click', clickBox)
-// This closes out the code above
+//The start game Constant has to be called in order for the game to work
+startGame()
 
 
-
+//This is what makes the game restart when you click on the restart game button
 let resetGameFunction = () => {
-    console.log("You reset the game, go ahead and play again!");
-    resetBox1 = document.querySelector(".resetGame")
-    resetBox1.textContent = " ";
+    console.log("You reset the game, go ahead and play again!")
+		document.getElementById('box0').innerText = ' ';
+		document.getElementById('box1').innerText = ' ';
+		document.getElementById('box2').innerText = ' ';
+		document.getElementById('box3').innerText = ' ';
+		document.getElementById('box4').innerText = ' ';
+		document.getElementById('box5').innerText = ' ';
+		document.getElementById('box6').innerText = ' ';
+		document.getElementById('box7').innerText = ' ';
+		document.getElementById('box8').innerText = ' ';
+
+		spaces = {}
+		currentPlayer = X_TEXT
+
 }
 
 let restartGame = document.querySelector(".resetGame")
-changeBox.addEventListener('click', resetGameFunction)
-
+  restartGame.addEventListener('click', resetGameFunction)
 
 
 });
