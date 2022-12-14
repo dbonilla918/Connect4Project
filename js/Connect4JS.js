@@ -10,7 +10,7 @@ let checkWinX = () => {
 		alert("Player " + currentPlayer + " has won the game!")
 		gameBoard.classList.add('fade-in-textX');
 	} else if (spaces['box6'] == 'X' && spaces['box7'] == 'X' && spaces['box8'] == 'X') {
-		alert.set("Player " + currentPlayer + " has won the game!")
+		alert("Player " + currentPlayer + " has won the game!")
 		gameBoard.classList.add('fade-in-textX');
 	} else if (spaces['box0'] == 'X' && spaces['box3'] == 'X' && spaces['box6'] == 'X') {
 		alert("Player " + currentPlayer + " has won the game!")
@@ -38,7 +38,6 @@ let checkWinO = () => {
 		alert("Player " + currentPlayer + " has won the game!")
 		gameBoard.classList.add('fade-in-textO');
 	} else if (spaces['box6'] == 'O' && spaces['box7'] == 'O' && spaces['box8'] == 'O') {
-		alert("Player " + currentPlayer + " has won the game!")
 		alert("Player " + currentPlayer + " has won the game!")
 		gameBoard.classList.add('fade-in-textO');
 	} else if (spaces['box1'] == 'O' && spaces['box4'] == 'O' && spaces['box7'] == 'O') {

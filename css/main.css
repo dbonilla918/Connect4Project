@@ -4,13 +4,14 @@ button {
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
+  width: 300px;
 }
 
 .container {
-    padding: 40px;a
+    padding: 40px;
     height: 100vh;
     display: flex;
-    justify-content: center;a
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -48,7 +49,6 @@ button {
     color: blue;
     font-size: 115px;
     animation: fadeIn 3s;
-
 }
 
 @keyframes fadeIn {
